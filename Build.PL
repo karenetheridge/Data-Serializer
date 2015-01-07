@@ -45,6 +45,20 @@ my $build = Module::Build->new
 		},
 	#autosplit => 'lib/Data/Serializer.pm',
 
+	meta_merge => {
+		'meta-spec' => { version => 2 },
+		resources => {
+			repository => {
+				url => 'https://github.com/neilneely/Data-Serializer.git',
+				web => 'https://github.com/neilneely/Data-Serializer',
+				type => 'git',
+			},
+		},
+		bugtracker => {
+			mailto => 'bug-Data-Serializer@rt.cpan.org',
+			web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Data-Serializer',
+		},
+	},
 );
 $build->create_build_script;
 
