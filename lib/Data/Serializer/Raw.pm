@@ -228,7 +228,7 @@ Currently supports the following serializers:
 
 =item L<FreezeThaw(3)>
 
-=item L<JSON(3)>
+=item L<JSON::MaybeXS(3)>
 
 =item L<JSON::Syck(3)>
 

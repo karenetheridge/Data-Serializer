@@ -1,20 +1,20 @@
-package Data::Serializer::JSON;
-BEGIN { @Data::Serializer::JSON::ISA = qw(Data::Serializer) }
+package Data::Serializer::JSON::MaybeXS;
+BEGIN { @Data::Serializer::JSON::MaybeXS::ISA = qw(Data::Serializer) }
 
 use warnings;
 use strict;
-use JSON;
+use JSON::MaybeXS qw(encode_json decode_json);
 use vars qw($VERSION @ISA);
 
 $VERSION = '0.04';
 
 sub serialize {
-	return JSON->VERSION < 2 ? JSON->new->objToJson($_[1]) : JSON->new->utf8->encode($_[1]);
+	return encode_json($_[1]);
 }
 
 sub deserialize {
 	#return JSON->VERSION < 2 ? JSON->new->jsonToObj($_[1]) : JSON->new->decode($_[1]);
-	$_[1] and return JSON->VERSION < 2 ? JSON->new->jsonToObj($_[1]) : JSON->new->utf8->decode($_[1]);
+	$_[1] and return decode_json($_[1]);
 }
 
 1;
@@ -24,7 +24,7 @@ __END__
 
 =head1 NAME
 
-Data::Serializer::JSON - Creates bridge between Data::Serializer and JSON
+Data::Serializer::JSON::MaybeXS - Creates bridge between Data::Serializer and JSON::MaybeXS
 
 =head1 SYNOPSIS
 
@@ -49,6 +49,8 @@ Naoya Ito <naoya@bloghackers.net>
 
 Patch to JSON 2 by Makamaka <makamaka@donzoko.net>
 
+Patch to JSON::MaybeXS by Karen Etheridge <ether@cpan.org>
+
 =head1 COPYRIGHT
 
   This program is free software; you can redistribute it
@@ -56,7 +58,7 @@ Patch to JSON 2 by Makamaka <makamaka@donzoko.net>
 
 =head1 SEE ALSO
 
-perl(1), Data::Serializer(3), JSON(3).
+perl(1), Data::Serializer(3), JSON::MaybeXS(3).
 
 =cut
 

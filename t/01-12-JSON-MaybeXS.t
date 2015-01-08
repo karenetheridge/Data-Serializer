@@ -13,7 +13,7 @@ my $T = typical ExtUtils::TBone;                 # standard log
 	
 my @serializers;
 
-foreach my $serializer (qw(JSON)) {
+foreach my $serializer (qw(JSON::MaybeXS)) {
 	if (eval "require $serializer") {
 		$T->msg("Found serializer $serializer");  
 		push(@serializers, $serializer);
@@ -22,7 +22,7 @@ foreach my $serializer (qw(JSON)) {
 	}
 }
 unless (@serializers) {
-        $T->begin('0 # Skipped:  JSON not installed');
+        $T->begin('0 # Skipped:  JSON::MaybeXS not installed');
         exit;
 }
 

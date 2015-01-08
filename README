@@ -144,7 +144,7 @@ METHODS
         Data::Dumper(3)
         Data::Taxi(3)
         FreezeThaw(3)
-        JSON(3)
+        JSON::MaybeXS(3)
         JSON::Syck(3)
         PHP::Serialization(3)
         Storable(3)

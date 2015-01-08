@@ -186,7 +186,7 @@ $testrefs{selfrefarray}->[3]   = $testrefs{selfrefarray}->[1];
                                                 complexhash  => $counts{complexhash},
                                                 selfrefhash  => $counts{selfrefhash},
                                            },
-                        'JSON'  => {
+                        'JSON::MaybeXS'  => {
                                                 simpleobject  => 0,	#JSON doesn't do objects
                                                 simplescalar  => 0,	#JSON doesn't do scalars
                                                 simplescalarref  => 0,	#JSON doesn't do scalars

@@ -698,7 +698,7 @@ Currently supports the following serializers:
 
 =item L<FreezeThaw(3)>
 
-=item L<JSON(3)>
+=item L<JSON::MaybeXS(3)>
 
 =item L<JSON::Syck(3)>
 
@@ -867,7 +867,7 @@ This module is dedicated to my beautiful wife Erica.
 
 =item L<FreezeThaw(3)>
 
-=item L<JSON(3)>
+=item L<JSON::MaybeXS(3)>
 
 =item L<JSON::Syck(3)>
 
